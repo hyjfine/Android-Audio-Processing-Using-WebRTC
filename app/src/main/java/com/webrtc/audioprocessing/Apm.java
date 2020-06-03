@@ -5,8 +5,6 @@ package com.webrtc.audioprocessing;
  */
 public class Apm {
 
-
-
     public enum AEC_SuppressionLevel{
         LowSuppression,
         ModerateSuppression,

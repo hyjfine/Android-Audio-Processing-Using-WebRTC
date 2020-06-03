@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.apmtest.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener, Counters {
+    private static final String TAG = "MainActivity APM";
     private EditText etTargetPort;
     private EditText etTargetIP;
     private EditText etAgcTargetLevel;
@@ -85,7 +86,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         etAgcTargetLevel.setText(apmViewModel.getAgcTargetLevel());
         etAgcCompressionGain.setText(apmViewModel.getAgcCompressionGain());
         etAceBufferDelay.setText(apmViewModel.getAceBufferDelay());
-
 
 
         AecBufferDelayView();
@@ -345,7 +345,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     apmViewModel.setAgcTargetLevel(etAgcTargetLevel.getText().toString());
                     apmViewModel.setAgcCompressionGain(etAgcCompressionGain.getText().toString());
                     apmViewModel.setAceBufferDelay(etAceBufferDelay.getText().toString());
-                    Log.d("abc",apmViewModel.toString());
+                    Log.d(TAG, apmViewModel.toString());
                     audioProcessing = new AudioProcessing(this, apmViewModel, this);
                     audioProcessing.onSpeaker(true);
                 }
@@ -480,7 +480,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
 
-        Log.d("abcd", "aa : " + apmViewModel.getAgcMode0() + "  ad:   " + apmViewModel.getAgcMode1() + "   fd:   " + apmViewModel.getAgcMode2());
+        Log.d(TAG, "aa : " + apmViewModel.getAgcMode0() + "  ad:   " + apmViewModel.getAgcMode1() + "   fd:   " + apmViewModel.getAgcMode2());
 
     }
 
